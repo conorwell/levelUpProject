@@ -15,11 +15,11 @@ input {text-align: center;}
 <h1>Text summarizer</h1>
 <p>Welcome to the text summarizer! This website uses A Hugging Face Large Language Model to summarize any text entered. Give it a try!</p>
 
-
-<form action="/input_page.php">
-  <label for="fname">Text to Summarize:</label>
-  <input type="text" id="fname" name="fname"><br><br>
-  <input type="submit" value="Submit">
+  <p> Input text to summarize: </p>
+  <form action="" method="post" novalidate>
+{% csrf_token %}
+{{ form }}
+<input type="submit" value="Submit">
 </form>
 
 </body>
