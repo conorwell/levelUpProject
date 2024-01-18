@@ -14,7 +14,9 @@ input {text-align: center;}
 
 <h1>Text summarizer</h1>
 <p>Welcome to the text summarizer! This website uses A Hugging Face Large Language Model to summarize any text entered. Give it a try!</p>
-
+  {% if name %}
+  <p> Hi {{name}}</p>
+  {% endif %}
   <p> Input text to summarize: </p>
   <form action="" method="post" novalidate>
 {% csrf_token %}
@@ -22,7 +24,12 @@ input {text-align: center;}
 <input type="submit" value="Submit">
 </form>
 
-<h2>Output: </h2>
+{% if Summary %}
+  <p> Here is your summary: </p>
+  <p> {{ Summary.summary }} </p>
+{% endif %}
 
 </body>
 </html>
+
+
